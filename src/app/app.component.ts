@@ -9,7 +9,7 @@ export class AppComponent {
 
 
 items = [
-  {'key': 'demo', 'english': 'demo', 'swedish': 'demo', 'norwegian': 'demo'}
+  //{'key': 'demo', 'english': 'demo', 'swedish': 'demo', 'norwegian': 'demo'}
 ];
 
 key = "VWS_";
