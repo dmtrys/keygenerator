@@ -50,7 +50,7 @@
                         <span *ngIf="i !== editStateId">
                     {{item.key}}
             </span>
-                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.key">
+                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.key" (ngModelChange)="setItemsSession()">
 
                 </td>
 
@@ -58,7 +58,7 @@
                         <span *ngIf="i !== editStateId">
                         {{item.swedish}}
                 </span>
-                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.swedish">
+                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.swedish" (ngModelChange)="setItemsSession()">
 
 
                 </td>
@@ -67,7 +67,7 @@
                         <span *ngIf="i !== editStateId">
                     {{item.norwegian}}
             </span>
-                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.norwegian">
+                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.norwegian" (ngModelChange)="setItemsSession()">
 
 
                 </td>
@@ -76,7 +76,7 @@
                                 <span *ngIf="i !== editStateId">
                                 {{item.english}}
                         </span>
-                                <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.english">
+                                <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.english" (ngModelChange)="setItemsSession()">
         
         
         

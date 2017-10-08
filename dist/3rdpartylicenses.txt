@@ -71,6 +71,10 @@ THE SOFTWARE.
 MIT
 MIT
 
+angular-2-local-storage@1.0.1
+MIT
+MIT
+
 ng-click-outside@2.4.1
 MIT
 The MIT License (MIT)

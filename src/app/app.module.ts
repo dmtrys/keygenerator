@@ -13,6 +13,7 @@ import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 
 import { ClickOutsideModule } from 'ng-click-outside';
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,11 @@ import { ClickOutsideModule } from 'ng-click-outside';
   imports: [
     BrowserModule,
     FormsModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    LocalStorageModule.withConfig({
+      prefix: 'my-app',
+      storageType: 'localStorage'
+  })
   ],
   providers: [
     AuthorsListService
