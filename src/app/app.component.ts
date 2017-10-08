@@ -80,18 +80,33 @@ setItemsSession() {
 
 
 
-    console.log( localStorage.getItem('norwegian') );
+    //console.log( localStorage.getItem('norwegian') );
   }
 
   removeItem(item) {
     let index = this.items.indexOf(item);
     this.items.splice(index, 1);
-    this.editStateId = -1;
-    localStorage.setItem("editStateId", '-1');
+    //console.log(this.editStateId+' '+index);
+    
+    
+    if (index === this.editStateId) {
+      this.editStateId = -1;
+    }
+    else {
+      this.editStateId = (index > this.editStateId) ? this.editStateId : this.editStateId-1;
+    }
+    
+    
+    //this.editStateId = (index === this.editStateId) ? -1 : this.editStateId;
+
+   // this.editStateId = -1;
+   // localStorage.setItem("editStateId", '-1');
+   
+   
     this.setItemsSession();
   }
 
-  editStateId = -1;
+  editStateId;
 
   editItem(item) {
     let index = this.items.indexOf(item);
