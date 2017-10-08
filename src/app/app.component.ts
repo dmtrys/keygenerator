@@ -100,7 +100,7 @@ setItemsSession() {
     //this.editStateId = (index === this.editStateId) ? -1 : this.editStateId;
 
    // this.editStateId = -1;
-   // localStorage.setItem("editStateId", '-1');
+   localStorage.setItem("editStateId", String(this.editStateId));
    
    
     this.setItemsSession();
