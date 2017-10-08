@@ -30,7 +30,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     FormsModule,
     ClickOutsideModule,
     LocalStorageModule.withConfig({
-      prefix: 'my-app',
+      prefix: 'json-sesam',
       storageType: 'localStorage'
   })
   ],
