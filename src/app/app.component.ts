@@ -45,7 +45,7 @@ swedish;
 norwegian;
 
 
-activeButton="";
+activeButton;
 
 changeJsonOutput(language) {
   this.activeButton = language;

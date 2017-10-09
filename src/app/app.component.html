@@ -121,7 +121,7 @@
 
 
 
-
+{{activeButton}}
 <thead  *ngIf="items.length > 0">
         <tr class="{{themeClasses.backgroundClass}}">
           <th class="text-center {{themeClasses.textClass}}" colspan="5"> 
@@ -129,15 +129,15 @@
               <h2 class="{{themeClasses.textClass}}">JSON OBJECT</h2>
               <div class="btn-group">
  
-                    <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'Swedish'}"
+                    <button type="button" class=" btn" [ngClass]="{'active': activeButton == 'Swedish', 'btn-info': currentTheme == 'blue', 'btn-success': currentTheme == 'green'}"
                     (click)="changeJsonOutput('Swedish')">
                             Swedish
                        </button>
-                       <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'Norwegian'}"
+                       <button type="button" class="btn" [ngClass]="{'active': activeButton == 'Norwegian', 'btn-info': currentTheme == 'blue', 'btn-success': currentTheme == 'green'}"
                        (click)="changeJsonOutput('Norwegian')">
                             Norwegian
                        </button>
-                       <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'English'}"
+                       <button type="button" class="btn" [ngClass]="{'active': activeButton == 'English', 'btn-info': currentTheme == 'blue', 'btn-success': currentTheme == 'green'}"
                        (click)="changeJsonOutput('English')">
                             English
                        </button>
