@@ -25,6 +25,12 @@ export class AppComponent {
     this.swedish = (localStorage.getItem('swedish')) ? localStorage.getItem('swedish') : '*';
     this.norwegian = (localStorage.getItem('norwegian')) ? localStorage.getItem('norwegian') : '';
 
+    this.currentTheme = (localStorage.getItem('currentTheme')) ? localStorage.getItem('currentTheme') : 'green';
+    
+
+
+    this.returnThemeClasses();
+
 }
 
 setFieldSession(field, value) {
@@ -128,6 +134,51 @@ setItemsSession() {
 
 
   }
+
+currentTheme;
+
+themeClasses = {
+  'backgroundClass': '',
+  'textClass': '',
+  'buttonClass': '',
+  'labelClass': ''
+}
+
+
+setTheme() {
+  this.currentTheme = (this.currentTheme == 'green') ? this.currentTheme = 'blue' : this.currentTheme = 'green';
+  this.returnThemeClasses();
+  localStorage.setItem("currentTheme", this.currentTheme);
+}
+
+
+  returnThemeClasses() {
+
+    switch (this.currentTheme) {
+
+      case 'blue':
+        this.themeClasses = {
+          'backgroundClass': 'bg-primary',
+          'textClass': 'text-white',
+          'buttonClass': 'btn-info',
+          'labelClass': 'label-info'
+        }
+        break;
+
+      case 'green':
+        this.themeClasses = {
+          'backgroundClass': 'bg-success',
+          'textClass': 'text-success',
+          'buttonClass': 'btn-success',
+          'labelClass': 'label-success'
+        }
+
+    }
+
+}
+
+
+
 
 
 }

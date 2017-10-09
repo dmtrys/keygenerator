@@ -1,22 +1,23 @@
 <div class="container">
         <!-- <h2 class="text-primary">Translation JSON & Table Generator for WebSesam 1.0</h2> -->
      
-        <div class="panel panel-success">
-                <div class="panel-heading">
-                        <h2 class="text-primary">Translation JSON & Table Generator for WebSesam</h2>
+        <div class="panel">
+                <div class="panel-heading {{themeClasses.backgroundClass}}"><button type="button" class="btn pull-right {{themeClasses.buttonClass}}" (click)="setTheme()">Switch Theme</button>
+                        <h2 class="{{themeClasses.textClass}}">Translation JSON & Table Generator for WebSesam</h2>
                 </div>
                 <div class="panel-body">Version 1.0</div>
+                
         </div>
 
 
         <!-- <p>Enter the key and translations here:</p>             -->
         <table class="table table-bordered">
         <thead>
-                <tr class="bg-success">
-                        <th class="text-success">Key</th>
-                        <th class="text-success">Swedish</th>
-                        <th class="text-success">Norwegian</th>
-                        <th class="text-success">English</th>
+                <tr class="{{themeClasses.backgroundClass}}">
+                        <th class="{{themeClasses.textClass}}">Key</th>
+                        <th class="{{themeClasses.textClass}}">Swedish</th>
+                        <th class="{{themeClasses.textClass}}">Norwegian</th>
+                        <th class="{{themeClasses.textClass}}">English</th>
                         
                         <th></th>
                 </tr>
@@ -28,14 +29,14 @@
                         <td><input type="text" class="form-control" [(ngModel)]="swedish" (ngModelChange)="setFieldSession('swedish', swedish)"></td>
                         <td><input type="text" class="form-control" [(ngModel)]="norwegian" (ngModelChange)="setFieldSession('norwegian', norwegian)"></td>
                         <td><input type="text" class="form-control" [(ngModel)]="english" (ngModelChange)="setFieldSession('english', english)"></td>
-                        <td class="text-center"><button type="button" class="btn btn-success" (click)="addItem()">Add Item</button></td>
+                        <td class="text-center"><button type="button" class="btn {{themeClasses.buttonClass}}" (click)="addItem()">Add Item</button></td>
                 </tr>
 
         </tbody>
 
         <thead *ngIf="items.length > 0">
-                <tr class="bg-success">
-                        <th class="text-success text-center" colspan="5">Added Items</th>
+                <tr class="{{themeClasses.backgroundClass}}">
+                        <th class="text-center {{themeClasses.textClass}}" colspan="5">Added Items</th>
 
                 </tr>
         </thead>
@@ -90,7 +91,7 @@
 
 
                         <div class="btn-group">
-                                <button type="button" class="btn btn-success" (click)="editItem(item)">
+                                <button type="button" class="btn {{themeClasses.buttonClass}}" (click)="editItem(item)">
                             <span class="glyphicon glyphicon-edit"
                             [ngClass]="{'glyphicon-edit': i !== editStateId, 'glyphicon-ok': i == editStateId}"
                             
@@ -122,21 +123,21 @@
 
 
 <thead  *ngIf="items.length > 0">
-        <tr class="bg-success">
-          <th class="text-success text-center" colspan="5"> 
+        <tr class="{{themeClasses.backgroundClass}}">
+          <th class="text-center {{themeClasses.textClass}}" colspan="5"> 
                   
-              <h2 class="text-primary">JSON OBJECT</h2>
+              <h2 class="{{themeClasses.textClass}}">JSON OBJECT</h2>
               <div class="btn-group">
  
-                    <button type="button" class="btn btn-success" [ngClass]="{'active': activeButton == 'Swedish'}"
+                    <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'Swedish'}"
                     (click)="changeJsonOutput('Swedish')">
                             Swedish
                        </button>
-                       <button type="button" class="btn btn-success" [ngClass]="{'active': activeButton == 'Norwegian'}"
+                       <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'Norwegian'}"
                        (click)="changeJsonOutput('Norwegian')">
                             Norwegian
                        </button>
-                       <button type="button" class="btn btn-success" [ngClass]="{'active': activeButton == 'English'}"
+                       <button type="button" class="btn {{themeClasses.buttonClass}}" [ngClass]="{'active': activeButton == 'English'}"
                        (click)="changeJsonOutput('English')">
                             English
                        </button>
@@ -158,9 +159,9 @@
 
 <table class="table table-bordered">
 <thead>
-        <tr class="bg-success text-success" >
+        <tr class="{{themeClasses.backgroundClass}} {{themeClasses.textClass}}" >
                 <th style="width:50%">
-JSON Objects <span class="label label-success">{{activeButton}}</span> <span class="label label-success">Total Number Of Objects: <span class="text-danger">{{items.length}}</span></span>
+JSON Objects <span class="label {{themeClasses.labelClass}}">{{activeButton}}</span> <span class="label {{themeClasses.labelClass}}">Total Number Of Objects: <span class="text-danger">{{items.length}}</span></span>
                 </th>
                 <th style="width:50%">
 HTML Insertable variables
