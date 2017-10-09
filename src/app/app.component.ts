@@ -21,14 +21,14 @@ export class AppComponent {
     this.editStateId = (localStorage.getItem('editStateId')) ? Number( localStorage.getItem('editStateId') ) : -1;
 
     this.key = (localStorage.getItem('key')) ? localStorage.getItem('key') : 'VWS_';
-    this.english = (localStorage.getItem('english')) ? localStorage.getItem('english') : '*';
+    this.english = (localStorage.getItem('english')) ? localStorage.getItem('english') : '';
     this.swedish = (localStorage.getItem('swedish')) ? localStorage.getItem('swedish') : '*';
-    this.norwegian = (localStorage.getItem('norwegian')) ? localStorage.getItem('norwegian') : '*';
+    this.norwegian = (localStorage.getItem('norwegian')) ? localStorage.getItem('norwegian') : '';
 
 }
 
 setFieldSession(field, value) {
-  localStorage.setItem(field, value);
+  localStorage.setItem(field.toUpperCase(), value);
 
 }
 
@@ -65,18 +65,18 @@ setItemsSession() {
 
  addItem() {
     this.items.push(
-      {'key': this.key, 'english': this.english, 'swedish': this.swedish, 'norwegian': this.norwegian}
+      {'key': this.key.toUpperCase(), 'english': this.english, 'swedish': this.swedish, 'norwegian': this.norwegian}
     );
     this.setItemsSession();
     this.key="VWS_";
-    this.english="*";
+    this.english="";
     this.swedish="*";
-    this.norwegian="*";
+    this.norwegian="";
 
     localStorage.setItem('key', "VWS_");
-    localStorage.setItem('english', "*");
+    localStorage.setItem('english', "");
     localStorage.setItem('swedish', "*");
-    localStorage.setItem('norwegian', "*");
+    localStorage.setItem('norwegian', "");
 
 
 

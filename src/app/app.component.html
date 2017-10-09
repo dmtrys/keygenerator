@@ -175,7 +175,7 @@ HTML Insertable variables
 
                                 <div *ngFor="let item of items; last as lastItem" class="text-left">
                                                 <span>&#123;</span><br/>
-                                                <span>"key": </span>"{{item.key}}"<br/>
+                                                <span>"key": </span>"{{item.key}}",<br/>
                                                 <span>"translation": </span>
                                                
                                                <span *ngIf="activeButton == 'English'">
@@ -194,6 +194,7 @@ HTML Insertable variables
                                                 
                                                 <br/>
                                                 <span>&#125;</span><span *ngIf="!lastItem">,</span>
+												<br /><br />
                                                 
                                             </div>
 
