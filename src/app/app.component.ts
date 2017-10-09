@@ -33,11 +33,6 @@ export class AppComponent {
 
 }
 
-setFieldSession(field, value) {
-  localStorage.setItem(field.toUpperCase(), value);
-
-}
-
 
 
 items = [
@@ -63,11 +58,28 @@ onClickedOutside() {
   //alert('');
 }
 
-setItemsSession() {
+setItemsSession(item?) {
+
+  if (item) {
+    let index = this.items.indexOf(item);
+    console.log(index);
+    console.log(this.items[index].key);
+    this.items[index].key = this.items[index].key.toUpperCase();
+  }
+
   localStorage.setItem("items", JSON.stringify(this.items));
   //console.log('session changed');
 }
 
+setFieldSession(field, value) {
+
+  if (field == 'key' ) {
+    this.key = this.key.toUpperCase();
+  }
+
+  localStorage.setItem(field.toUpperCase(), value);
+
+}
 
  addItem() {
     this.items.push(
@@ -83,8 +95,6 @@ setItemsSession() {
     localStorage.setItem('english', "");
     localStorage.setItem('swedish', "*");
     localStorage.setItem('norwegian', "");
-
-
 
     //console.log( localStorage.getItem('norwegian') );
   }
@@ -176,9 +186,6 @@ setTheme() {
     }
 
 }
-
-
-
 
 
 }

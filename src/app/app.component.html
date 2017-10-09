@@ -51,7 +51,7 @@
                         <span *ngIf="i !== editStateId">
                     {{item.key}}
             </span>
-                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.key" (ngModelChange)="setItemsSession()">
+                        <input type="text" *ngIf="i == editStateId" class="form-control" [(ngModel)]="item.key" (ngModelChange)="setItemsSession(item)">
 
                 </td>
 
